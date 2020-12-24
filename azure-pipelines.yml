@@ -14,6 +14,13 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
+- task: InstallFortifySCA@7
+  inputs:
+    InstallerPath: 'C:\Program Files\Fortify\Fortify_SCA_and_Apps_19.2.0\bin'
+    VS2015: false
+    VS2019: true
+    LicenseFile: 'C:\Users\user\Desktop\Fortify\fortify.license'
+    RunFortifyRulepackUpdate: false
 - task: FortifySCA@7
   inputs:
     licenseFile: 'C:\Users\user\Desktop\Fortify\fortify.license'
