@@ -14,17 +14,10 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: InstallFortifySCA@7
-  inputs:
-    InstallerPath: 'C:\Users\user\Desktop\Fortify\Fortify_19.20\Fortify_SCA_and_Apps_19.2.0_windows_x64.exe'
-    VS2015: false
-    LicenseFile: 'C:\Users\user\Desktop\Fortify\Fortify_19.20\fortify.license'
-    RunFortifyRulepackUpdate: false
-    ProxyPort: 80
 - task: FortifySCA@7
   inputs:
     
-    licenseFile: 'C:\Users\user\Desktop\Fortify\Fortify_19.20\fortify.license'
+    licenseFile: ''
     runBuildTranslate: true
     applicationType: 'java'
     buildClasspath: '**\*.jar'
