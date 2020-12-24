@@ -18,7 +18,7 @@ steps:
   inputs:
     InstallerPath: 'C:\Program Files\Fortify\Fortify_SCA_and_Apps_19.2.0\bin'
     VS2015: false
-    VS2019: true
+    VS2019: false
     LicenseFile: 'C:\Users\user\Desktop\Fortify\fortify.license'
     RunFortifyRulepackUpdate: false
 - task: FortifySCA@7
