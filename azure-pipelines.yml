@@ -16,7 +16,7 @@ steps:
 
 - task: InstallFortifySCA@7
   inputs:
-    InstallerPath: 'C:\Program Files\Fortify\Fortify_SCA_and_Apps_19.2.0\bin'
+    InstallerPath: 'C:\Program Files\Fortify\Fortify_SCA_and_Apps_19.2.0\bin\sourceanalyzer.exe'
     VS2015: false
     VS2019: false
     LicenseFile: 'C:\Users\user\Desktop\Fortify\fortify.license'
