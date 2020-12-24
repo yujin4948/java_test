@@ -16,11 +16,9 @@ steps:
 
 - task: FortifySCA@7
   inputs:
-    
-    licenseFile: ''
     runBuildTranslate: true
     applicationType: 'java'
-    buildClasspath: '**\*.jar'
+    fortifySourceTranslate: 'test'
     fortifyBuildId: '20201224_4'
     runFortifyRulepackUpdate: false
     runFortifyClean: true
@@ -28,7 +26,4 @@ steps:
     scaDebug: true
     runFortifyScan: true
     fortifyScanType: 'LocalScan'
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
 
