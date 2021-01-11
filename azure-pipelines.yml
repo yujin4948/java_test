@@ -9,25 +9,10 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-- task: BatchScript@1
+- task: CmdLine@2
   inputs:
-    filename: 'C:\Users\user\Desktop\Fortify\Test\20210111\webgoat_test.bat'
-    modifyEnvironment: false
-    echo See https://aka.ms/yaml
-
-
-- task: FortifySCA@7
-  inputs:
-    runBuildTranslate: true
-    applicationType: 'java'
-    fortifySourceTranslate: 'test'
-    fortifyBuildId: '20201224_4'
-    runFortifyRulepackUpdate: false
-    runFortifyClean: true
-    scaVerbose: true
-    scaDebug: true
-    runFortifyScan: true
-    fortifyScanType: 'LocalScan'
-
+    script: |
+      sourceanalyzer -b test -clean
+      sourceanalyzer -b test -cp "C:\Program Files\Fortify\Fortify_SCA_and_Apps_20.2.0\Samples\advanced\webgoat\**\*.jar" "C:\Program Files\Fortify\Fortify_SCA_and_Apps_20.2.0\Samples\advanced\webgoat"
+      sourceanalyzer -b test -scan -f "C:\Users\user\Desktop\Fortify\Test\20210111\test.fpr"
+    workingDirectory: 'C:\Program Files\Fortify\Fortify_SCA_and_Apps_20.2.0\bin\sourceanalyzer.exe'
