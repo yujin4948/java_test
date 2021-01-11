@@ -16,7 +16,7 @@ steps:
     filename: 'C:\Users\user\Desktop\Fortify\Test\20210111\webgoat_test.bat'
     modifyEnvironment: false
     echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+
 
 - task: FortifySCA@7
   inputs:
